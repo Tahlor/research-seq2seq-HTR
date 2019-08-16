@@ -55,7 +55,7 @@ class Encoder(nn.Module):
             out = self.layer_dropout(out)
         #out.register_hook(print)
         out = out.permute(3, 0, 2, 1) # (width, batch, height, channels)
-        out.contiguous()
+        out = out.contiguous()
         #out = out.view(-1, batch_size, (((((self.height-2)//2)-2)//2-2-2-2)//2)*128) # (t, b, f) (173, 32, 1024)
         out = out.view(-1, batch_size, self.height//16*512)
         if self.step is not None:

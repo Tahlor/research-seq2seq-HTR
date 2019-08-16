@@ -6,7 +6,7 @@ epochs = 61
 img_names = ['c04-110-03-08,168', 'd01-016-00-10,189', 'd04-101-01-10,181', 'd06-060-08-06,158', 'e06-015-02-01,178']
 gts = []
 for i in img_names:
-    with open('RWTH.iam_word_gt_final.test.thresh', 'r') as f:
+    with open('data/RWTH.iam_line_gt_final.test.thresh', 'r') as f:
         gt = f.readlines()
         for j in gt:
             ss = j.strip().split(' ')
